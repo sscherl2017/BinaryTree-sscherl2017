@@ -136,9 +136,9 @@ public class BinaryTree<E> implements Iterable<E>
 	* Returns an Iterator of the BinaryTree.
 	* @return	An Iterator of the BinaryTree
 	*/
-	public PostOrderIterator<E> iterator()
+	public InOrderIterator<E> iterator()
 	{
-		return postorderIterator();
+		return inorderIterator();
 	}
 	
 	/**
@@ -179,10 +179,10 @@ public class BinaryTree<E> implements Iterable<E>
 		else
 		{
 			if (right == null)
-				return value + "(" + left.toString() + ", blank)";
+				return value + "(" + left.toString() + ",)";
 			else if (left == null)
-				return value + "(blank, " + right.toString() + ")";
-			return value + "(" + left.toString() + ", " + right.toString() + ")";
+				return value + "(," + right.toString() + ")";
+			return value + "(" + left.toString() + "," + right.toString() + ")";
 		}
 	}
 	
